@@ -5,7 +5,17 @@ public class SpawnManager : MonoBehaviour
     public Brick BrickPrefab;
     public int LineCount = 6;
 
+    public static SpawnManager Instance;
+
+    private void Awake()
+    {
+        Instance = this;
+    }
     void Start()
+    {
+        SpawnBricks();
+    }
+    public void SpawnBricks()
     {
         const float step = 0.6f;
         int perLine = Mathf.FloorToInt(4.0f / step);

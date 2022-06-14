@@ -41,5 +41,6 @@ public class GameManager : MonoBehaviour
     {
         m_GameOver = true;
         GameOverText.SetActive(true);
+        ScoreManager.Instance.CheckForBestScore();
     }
 }
